@@ -4,4 +4,165 @@ Source: https://kiro.dev/docs/cli/experimental/tangent-mode/
 
 ---
 
-DocsCLIExperimentalTangent ModeTangent modeOn this pageEnabling tangent modeBasic usageEnter tangent modeIn tangent modeExit tangent modeExit with tailUsage examplesExample 1: Exploring alternativesExample 2: Getting Kiro CLI helpExample 3: Clarifying requirementsExample 4: Keeping useful informationConfigurationKeyboard shortcutAuto-tangent for introspectVisual indicatorsWhen to use tangent modeGood use casesWhen not to useTipsHow it worksCheckpoint creationRestorationTail modeLimitationsTroubleshootingTangent mode not workingKeyboard shortcut not workingLost in tangent modeAccidentally discarded important informationRelated featuresBest practicesWorkflow integrationExample workflowNext steps
+Tangent mode creates conversation checkpoints, allowing you to explore side topics without disrupting your main conversation flow. Enter tangent mode, ask questions or explore ideas, then return to your original conversation exactly where you left off.
+Enabling tangent mode
+Tangent mode is experimental and must be enabled:
+Via Experiment Command:
+bash/experiment
+# Select tangent mode from the list
+Via Settings:
+bashkiro-cli settings chat.enableTangentMode true
+Basic usage
+Enter tangent mode
+Use /tangent or Ctrl+T:
+> /tangent
+Created a conversation checkpoint (â¯). Use ctrl + t or /tangent to restore the conversation later.
+In tangent mode
+You'll see a yellow â¯ symbol in your prompt:
+â¯ > What is the difference between async and sync functions?
+Exit tangent mode
+Use /tangent or Ctrl+T again:
+â¯ > /tangent
+Restored conversation from checkpoint (â¯). - Returned to main conversation.
+Exit with tail
+Use /tangent tail to preserve the last conversation entry (question + answer):
+â¯ > /tangent tail
+Restored conversation from checkpoint (â¯) with last conversation entry preserved.
+Usage examples
+Example 1: Exploring alternatives
+> I need to process a large CSV file in Python. What's the best approach?
+I recommend using pandas for CSV processing...
+> /tangent
+Created a conversation checkpoint (â¯).
+â¯ > What about using the csv module instead of pandas?
+The csv module is lighter weight...
+â¯ > /tangent
+Restored conversation from checkpoint (â¯).
+> Thanks! I'll go with pandas. Can you show me error handling?
+Example 2: Getting Kiro CLI help
+> Help me write a deployment script
+I can help you create a deployment script...
+> /tangent
+Created a conversation checkpoint (â¯).
+â¯ > What Kiro CLI commands are available for file operations?
+Kiro CLI provides read, write, shell...
+â¯ > /tangent
+Restored conversation from checkpoint (â¯).
+> It's a Node.js application for AWS
+Example 3: Clarifying requirements
+> I need to optimize this SQL query
+Could you share the query you'd like to optimize?
+> /tangent
+Created a conversation checkpoint (â¯).
+â¯ > What information do you need to help optimize a query?
+To optimize SQL queries effectively, I need:
+1. The current query
+2. Table schemas and indexes...
+â¯ > /tangent
+Restored conversation from checkpoint (â¯).
+> Here's my query: SELECT * FROM orders...
+Example 4: Keeping useful information
+> Help me debug this Python error
+I can help you debug that. Could you share the error message?
+> /tangent
+Created a conversation checkpoint (â¯).
+â¯ > What are the most common Python debugging techniques?
+Here are the most effective Python debugging techniques:
+1. Use print statements strategically
+2. Leverage the Python debugger (pdb)...
+â¯ > /tangent tail
+Restored conversation from checkpoint (â¯) with last conversation entry preserved.
+> Here's my error: TypeError: unsupported operand type(s)...
+# The preserved entry about debugging techniques is now part of main conversation
+Configuration
+Keyboard shortcut
+Change the shortcut key (default: t):
+bashkiro-cli settings chat.tangentModeKey y
+Auto-tangent for introspect
+Automatically enter tangent mode for Kiro CLI help questions:
+bashkiro-cli settings introspect.tangentMode true
+Visual indicators
+Normal mode: >  (magenta)
+Tangent mode: â¯ >  (yellow â¯ + magenta)
+With agent: [dev] â¯ >  (cyan + yellow â¯ + magenta)
+When to use tangent mode
+Good use cases
+Asking clarifying questions about the current topic
+Exploring alternative approaches before deciding
+Getting help with Kiro CLI commands or features
+Testing understanding of concepts
+Quick side questions that don't need to be in main context
+When not to use
+Completely unrelated topics - Start a new conversation instead
+Long, complex discussions - Use regular conversation flow
+When you want the side discussion in main context - Don't use tangent mode
+Tips
+Keep tangents focused: Brief explorations, not extended discussions
+Return promptly: Don't forget you're in tangent mode
+Use for clarification: Perfect for "wait, what does X mean?" questions
+Experiment safely: Test ideas without affecting main conversation
+Use /tangent tail: When both the tangent question and answer are useful for main conversation
+How it works
+Checkpoint creation
+When you enter tangent mode:
+Current conversation state is saved as a checkpoint
+You can continue the conversation in tangent mode
+All tangent conversation is separate from main thread
+Restoration
+When you exit tangent mode:
+Conversation returns to the checkpoint state
+Tangent conversation is discarded (unless using tail)
+Main conversation continues as if tangent never happened
+Tail mode
+Using /tangent tail:
+Returns to checkpoint like normal exit
+Preserves the last Q&A pair from tangent
+Adds that Q&A to main conversation context
+Useful when tangent provided valuable information
+Limitations
+Tangent conversations are discarded when you exit (unless using tail)
+Only one level of tangent supported (no nested tangents)
+Experimental feature that may change or be removed
+Must be explicitly enabled before use
+Troubleshooting
+Tangent mode not working
+Enable via experiment:
+bash/experiment
+# Select tangent mode from the list
+Or enable via settings:
+bashkiro-cli settings chat.enableTangentMode true
+Keyboard shortcut not working
+Check or reset the shortcut key:
+bashkiro-cli settings chat.tangentModeKey t
+Ensure you're using Ctrl+T (not just T).
+Lost in tangent mode
+Look for the â¯ symbol in your prompt. Use /tangent to exit and return to main conversation.
+Accidentally discarded important information
+If you exit tangent mode without using tail and lose important information:
+Unfortunately, tangent conversations are not recoverable
+You'll need to ask the question again in the main conversation
+Consider using /tangent tail in the future to preserve important Q&A pairs
+Related features
+Introspect: Kiro CLI help (auto-enters tangent if configured)
+Experiments: Manage experimental features with /experiment
+Checkpointing: Similar concept but for file changes
+Best practices
+Workflow integration
+Start main task: Begin your primary conversation
+Hit tangent: When a side question arises, use /tangent
+Explore freely: Ask clarifying questions without worry
+Decide on tail: If the tangent was useful, use /tangent tail
+Continue main: Return to your primary task
+Example workflow
+> Help me refactor this React component
+# Main conversation starts...
+> /tangent
+â¯ > What's the difference between useMemo and useCallback?
+# Get clarification...
+â¯ > /tangent tail  # This was useful, keep it
+> Now I understand. Let's use useMemo for the expensive calculation...
+Next steps
+Experimental Features Overview
+Checkpointing
+Settings Configuration
+Page updated: November 18, 2025Knowledge managementTODO lists
