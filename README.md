@@ -1,11 +1,6 @@
-<div align="left">
-  <img src="assets/kiro-icon.png" alt="Kiro" width="120" height="120">
-  
-  # Kiro
-  
-  Kiro is an agentic IDE that helps you go from prototype to production with spec-driven development, agent hooks, and natural language coding assistance. Build faster with AI-powered features that understand your entire codebase, turn prompts into structured specs, and automate repetitive tasks.
-  
-</div>
+# Kiro
+
+Kiro is an agentic IDE that helps you go from prototype to production with spec-driven development, agent hooks, and natural language coding assistance. Build faster with AI-powered features that understand your entire codebase, turn prompts into structured specs, and automate repetitive tasks.
 
 ## Core Capabilities
 
@@ -43,6 +38,8 @@ Get started with Kiro by following our comprehensive **[first project guide](htt
 Import your VS Code setup including extensions and settings during the initial setup process.
 
 ## Documentation
+
+* [here](docs/index.md)
 
 **[📚 View Documentation →](https://kiro.dev/docs/)**
 

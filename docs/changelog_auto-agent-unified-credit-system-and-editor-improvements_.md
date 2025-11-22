@@ -1,0 +1,7 @@
+# Auto agent, unified credit system, and editor improvements - Kiro
+
+Source: https://kiro.dev/changelog/auto-agent-unified-credit-system-and-editor-improvements/
+
+---
+
+Back to ChangelogSeptember 17, 2025Auto agent, unified credit system, and editor improvementsv0.2.59This release brings Auto, our new agent, enhanced usage tracking, and editor improvements to elevate your development experience.New FeaturesNote: These features are rolling out gradually between now and October 1st, and users will be migrated to a single pool of credits and new limits. Your limits will reset to the new monthly plan limits once migrated.Auto: Added Auto to the model options. Auto is an agent that uses a mix of different frontier models such as Sonnet 4 combined with specialized models, and optimization techniques such as intent detection, caching, and moreUnified Limits: Support for new paid plans with unified limits and fractional credit consumptionUsage Dashboard: Support to view usage based on single Kiro credit poolUsage Meter: Add credit consumption status bar item to allow easier usage trackingBug Fixes and ImprovementsEditor Upgrade: Upgraded editor to CodeOSS 1.103.2Account Management: Enable Kiro account deletion for BuilderIDAuthentication: Improvements to login reliability and logout flow for better signing experienceUI Improvements: Hide trust command UI on command cancellation{PREVIOUS}Editor Performance Improvements and Bug Fixes{NEXT}Security updates for CVE-2025-10585 and command execution
