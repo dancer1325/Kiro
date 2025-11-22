@@ -4,6 +4,11 @@ Source: https://kiro.dev/docs/editor/interface/
 
 ---
 
+* ALLOWED |
+  * **macOS**
+  * **Windows**
+  * **Linux**
+
 Kiro's interface is designed to provide a seamless coding experience with AI assistance integrated throughout.
 Main interface components
 Kiro's interface is divided into the following main components:

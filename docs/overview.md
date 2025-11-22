@@ -1,27 +1,44 @@
 https://kiro.dev/
 
 * Kiro
-  * := Agentic AI development platform /
-    * 💡[spec-driven development](docs_specs_.md)💡
-      * == [Natural prompt](docs_chat_.md) -- to -- [structured requirements](docs_specs_concepts_.md)
-        * requirements | EARS notation
-
-        ![](static/docs.overview.1.png)
-
-    * [advanced steering](docs_steering_.md)
-    * custom agents
+  * := ⭐️Agentic AI development platform (IDE + CLI)⭐️ 
+  * uses
     * FROM prototype -- to -- production
-      * 
+      * steps
+        * you prompt ->
+          * generate spec & tech stack
+        * implement -- via -- advanced agents
+
+# Kiro IDE
+
+* 💡[spec-driven development](docs_specs_.md)💡
+  * == [Natural prompt](docs_chat_.md) -- to -- [structured requirements](docs_specs_concepts_.md)
+    * requirements | EARS notation
+
+    ![](static/docs.overview.1.png)
+* [hooks](docs_hooks_.md)
+  * == AUTOMATE repetitive tasks -- based on -- file changes & development events
+* [agentic chat](docs_chat_.md)
+  * Multimodal
+  * Context management
+  * natural language
+* [advanced steering](docs_steering_.md)
+  * == guide Kiro's behavior
+* [MCP servers](docs_mcp_.md)
+  * == Connect external tools & data sources -- through the -- Model Context Protocol
+* **Privacy First**
+  * == your code is secured
+  
 
 * [Youtube video](https://www.youtube.com/watch?v=JOqLp1adGO4&t=1s)
   * TODO: 
-* 
 
-* 
-  * Architectural designs backed by best practicesOnce youâve iterated on requirements, Kiro analyzes your codebase and comes up with the architecture, system design, and tech stack that meets your needs.Loading image...Discrete tasks that map to requirementsKiro then creates an implementation plan with discreet tasks, sequenced based on dependencies, with optional comprehensive tests
-* Ask Kiro to implement each task using advanced agents, and watch the magic happen.Conversation to code to deployment, directly from the terminalAccess Kiro agents in your favorite terminal
-* Build features, automate workflows in seconds, analyze errors, trace bugs, and suggest fixes locally or over SSHâall in a terminal of your choice, in a highly interactive loop that keeps you in flow.Learn more about CLIInstall on macOS and Linuxcurl -fsSL https://cli.kiro.dev/install | bashLoading image...Terminal â 80Ã24Automate tasks with agent hooksDelegate tasks to AI agents that trigger on events such as file save
-* Agents autonomously execute in the background based on your pre-defined prompts, helping you scale your work by generating documentation, unit tests, or optimizing code performance.Learn more about hooksLoading image...{EVERYTHING YOU NEED}Go from vibe coding to viable codeBuilt for working with agentsMultimodal chat, spec-driven development, agent hooks - Kiro gives you the best tool for the job in a fresh development experience that still feels familiar.Advanced context managementWith specs, steering, and smart context management, Kiro understands the intent behind your prompts and helps you implement complex features on larger codebases, in fewer shots.Native MCP supportConnect to docs, databases, APIs, and more with native MCP integration, including remote, so you can bring your world where you work.Your code, your rulesConfigure how you want Kiro agents to interact with each project, or globally, via steering files
+# Kiro CLI
+* TODO:
+
+
+Native MCP supportConnect to docs, databases, APIs, and more with native MCP integration, including remote, so you can bring your world where you work.
+Your code, your rulesConfigure how you want Kiro agents to interact with each project, or globally, via steering files
 * Add context, coding standards, preferred workflows or tools with a simple command.Powered by the state of the artChoose between Claude Sonnet 4.5 for reliable advanced coding and reasoning, or Auto, which uses a mix of frontier models (like Sonnet 4.5 and other specialized models) for intent detection and caching to balance quality, latency, and cost.Compatible with VS CodeKiro supports Open VSX plugins, themes, and VS Code settings in a streamlined AI-ready environment.Strap in with autopilot modeLet Kiro autonomously run large tasks on its own without needing step-by-step instructions
 * You stay in control, especially when running scripts or commands.Per prompt credit usageSee how many credits each prompt consumes, in real-time, so you're always in control of your spend.Show, donât tellDrop an image of your UI design or a photo of your architecture whiteboarding session, and Kiro can use it to guide its implementation.Generate Git commit messagesDraft commit messages using the agent directly from the source control pane with a single click.Intelligent error diagnosticsKiro can read and interpret syntax, type, and semantic errors, making it easier to iterate and fix bugs.Witness the magic with code diffsSee code changes as they happen
 * Approve everything, step through each change, or make edits with one click.With enterprise-grade security and privacy, you can ship your best work with confidence.Learn moreTrusted by engineers worldwideAs a startup co-founder and CTO, time is the most important resource
